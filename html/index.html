@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+  <link rel="stylesheet" href="badal.css">
+  <!-- Removed invalid <a> inside <head> -->
+</head>
+
+<body>
+  <div class="profile-container" onclick="document.getElementById('fileInput').click();">
+    <img src="c:/Users/badal/Downloads/Screenshot_20240805_151329.jpg" alt="profile photo" />
+  </div>
+
+  <header>
+    <h1>Badal Reule</h1>
+    <p>Web Developer</p>
+  </header>
+
+  <div class="container">
+    <div id="change-bg-button" style="cursor: pointer; padding: 10px; background-color: lightgray; width: fit-content; margin-bottom: 20px;">
+      Toggle Background
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm <strong>Badal Reule</strong>
+      </p>
+      <p id="animatedText">
+        <!-- JavaScript will type this -->
+      </p>
+    </div>
+
+    <div class="section skills">
+      <h2>Skills</h2>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Planning</span>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <strong>Web Development</strong> at ABC Corp (2021 - Present)
+        </li>
+        <li>
+          <strong>Junior Developer</strong> at XYZ Inc (2019 - 2021)
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>Bachelor's in AI Robotics, Kimpo University (2025 - 2029)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="badalreule3@gmail.com">badalreule3@gmail.com</a>
+      </p>
+      <p>
+        Phone: <a href="tel:9749283293">9749283293</a>
+      </p>
+      <p>
+        LinkedIn: <a href="https://linkedin.com/in/badalreule" target="_blank">linkedin.com/in/badalreule</a>
+      </p>
+    </div>
+
+    <button type="button" onclick="location.href='badalreule3@gmail.com'">
+      Click to contact me
+    </button>
+  </div>
+
+  <footer>
+    <p>&#169; 2025. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const text = "A passionate and dedicated web developer with a strong foundation in front-end technologies like HTML, CSS, and JavaScript. From a young age, I've been fascinated by how websites work and how beautiful, functional designs can be created with just a few lines of code.";
+    const textElement = document.getElementById("animatedText");
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        textElement.textContent += text[index];
+        index++;
+        setTimeout(typeText, 50);
+      }
+    }
+
+    typeText();
+
+    const button = document.getElementById('change-bg-button');
+    let isOriginalColor = true;
+
+    button.addEventListener('click', () => {
+      document.body.style.backgroundColor = isOriginalColor ? '#000' : '#f4f4f4';
+      isOriginalColor = !isOriginalColor;
+    });
+  </script>
+</body>
+</html>
